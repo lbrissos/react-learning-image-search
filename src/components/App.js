@@ -1,6 +1,7 @@
 import React from "react";
-import SearchBar from "./SearchBar";
 import unsplash from "../api/unsplash";
+import SearchBar from "./SearchBar";
+import ImageList from "./ImageList";
 
 class App extends React.Component {
   state = { images: [] };
@@ -19,6 +20,7 @@ class App extends React.Component {
         {this.state.images.length > 0 && (
           <p>Found: {this.state.images.length} images</p>
         )}
+        <ImageList images={this.state.images} />
       </div>
     );
   }
